@@ -2,10 +2,10 @@ name: Call Main CiCd
 run-name: ${{ github.actor }} has launched the ${{ github.head_ref || github.ref_name }} pipeline for commit ${{github.sha}}
 on:
   push:
-    branches: [ dev, uat, prd ] # DO NOT CHANGE BRANCH NAME
+    branches: [ main ] # DO NOT CHANGE BRANCH NAME
 jobs:
   download-latest-code:
-    runs-on: uipath-cli
+    runs-on: self-hosted
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
